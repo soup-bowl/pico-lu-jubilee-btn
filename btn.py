@@ -11,6 +11,12 @@ def led_blink(count):
         light.off()
         sleep(0.25)
 
+def btn_press():
+    print("Button pressed.")
+    light.on()
+    sleep(2)
+    light.off()
+
 # Operation area.
 
 print("Light test.")
@@ -19,8 +25,4 @@ led_blink(5)
 print("Test done, waiting for command...")
 while True:
     button.wait_for_press()
-    for x in range(3):
-        print("Button pressed.")
-        light.on()
-        sleep(1)
-    light.off()
+    btn_press()
