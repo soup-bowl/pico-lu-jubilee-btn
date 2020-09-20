@@ -3,5 +3,5 @@ This is very much experimental, and is based upon custom wiring. Your mileage mi
 
 ## Dependencies
 ```
-sudo apt install python-rpi.gpio python3-rpi.gpio
+sudo apt install python3-rpi.gpio python3-gpiozero
 ```
