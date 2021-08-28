@@ -2,7 +2,6 @@ from machine import Pin
 import time
 from led import LED
 
-tube_led = Pin(22, Pin.OUT)
 tube_btn = Pin(21, Pin.IN, Pin.PULL_UP)
 sys_led  = Pin(25, Pin.OUT)
 
