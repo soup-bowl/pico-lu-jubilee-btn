@@ -1,30 +1,21 @@
-from machine import Pin, Timer
+from machine import Pin
 import time
+from led import LED
 
 tube_led = Pin(22, Pin.OUT)
 tube_btn = Pin(21, Pin.IN, Pin.PULL_UP)
 sys_led  = Pin(25, Pin.OUT)
-timer    = Timer();
 
-def tick(timer):
-    global sys_led
-    sys_led.toggle()
-   
-#timer.init(freq=2.5, mode=Timer.PERIODIC, callback=tick)
+print('Blinking LED to power check (no LED? Check LED batteries and/or script).')
+LED.led_blink(5)
 
-for x in range(5):
-  tube_led.value(1)
-  time.sleep(0.25)
-  tube_led.value(0)
-  time.sleep(0.25)
-
+print('Blink code finish - Listening for presses.')
 while True:
     first = tube_btn.value()
     time.sleep(0.01)
     second = tube_btn.value()
     if first and not second:
         print('Button pressed.')
-        tube_led.value(1)
+        LED.led_display(2)
     elif not first and second:
         print('Button released.')
-        tube_led.value(0)
