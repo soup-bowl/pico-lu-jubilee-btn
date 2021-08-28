@@ -1,16 +1,13 @@
 # London Underground Jubilee Line button project
+Currently designed for the **Raspberry Pi Pico** running **MicroPython**. **This will change as I need radio communications**.
+
 This is very much experimental, and is based upon custom wiring. Your mileage might vary.
 
-## Dependencies
+## Pin Connections
+Following the [Pico schematics](https://datasheets.raspberrypi.org/pico/Pico-R3-A4-Pinout.pdf), in this setup the following is assumed:
 ```
-sudo apt install python3-rpi.gpio python3-gpiozero
+Pin 27 - GP21 | Tube button, connected to GND on pin 18.
+Pin 29 - GP22 | Tube LED Mosfet gate (pass 9V battery supply).
 ```
 
-## Pin Connections
-In this setup, the following is assumed (board, not Broadcom SOC):
-```
-06 | Ground.
-07 | Tube button. 
-17 | Tube button.
-22 | Tube LED (Mosfet).
-```
+For the most part this project [follows this instructables guide](https://www.instructables.com/Hacking-a-London-Underground-Jubilee-Line-Door-But/).
